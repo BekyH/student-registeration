@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>This is School management system</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+
+    <script>
+        function addform(){
+          var na=document.forms["studentform"]["stdname"].value;
+          var id=document.forms["studentform"]["sid"].value;
+          var pas=document.forms["studentform"]["pswd"].value;
+         if(na=="" || id=="" || pas==""){
+            document.getElementById('aa').innerHTML='all fields are required';   
+         
+            return false;
+        
+         }
+       
+         else if(pas.length<4){
+            var pp =  document.getElementById('p');
+           pp.innerHTML="Password is too short!";
+             return false;
+         }
+         else{
+             return true;
+         }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-primary">
+<div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="adhome.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link active" href="#">Add</a></li>
+      <li class="nav-item"><a class="nav-link" href="view.php">View</a></li>
+      <li class="nav-item"><a class="nav-link" href="login.html">Log out</a></li>
+     
+    </ul>
+    
+</div>
+    </nav>
+    <header class="jumbotron">
+        <div class="container">
+            <p> Welcome to School management System</p>
+        </div>
+    </header>
+    <div class="container">
+     <div class="row">
+         <div class="col-sm-8 offset-sm-2">
+         <div class="card">
+             <div class = "card-header bg-primary">
+                 <h4>Add student</h4>
+             </div>
+             <div class="card-body">
+                 <form name="studentform" class="form" method="post" action="add.php" onsubmit="return addform();">
+                     <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="sname" class="col-form-label">Name</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type = "text" class="form-control" id="sname" name="stdname">
+                            <p id="na" style="color: red;"></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="stdid" class="col-form-label">Id</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type ="text" class="form-control" id="stdid" name="sid">
+                            <p id="i" style="color: red;"></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="pwd" class="col-form-label">Password</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="pwd" name="pswd">
+                            <p id="p" style="color: red;"></p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="se" class="col-form-label">section</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-control"id="se" name="dep">
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                         <div class="col-sm-3">
+                             <label for="g" class="col-form-label">Gender</label>
+                         </div>
+                        <div class="col-sm-4">
+                           <label class="radio-inline"><input type="radio" name="gender" checked value="M">Male</label>
+                           <label class="radio-inline"><input type="radio" name="gender" value="F">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4 offset-sm-4">
+                                <p id="aa" style="color: red;"></p>
+                            <input type="submit" class="btn btn-primary" value="Submit" name="add">
+                            <p id="su" style="color: blue;"></p>
+                        </div>
+                    </div>
+                 </form>
+             </div>
+         </div>
+        </div>
+     </div>
+        
+    </div>
+    
+    <footer class="footer">
+            <div class = "container">
+                    <div class="row">
+                       
+                                <div col-7 col-sm-5>
+                                    <h5>Our Address</h5>
+                                    <address>
+                                      6 kilo st.Gorge square
+                                      <i class="fa fa-phone fa-lg"></i> Tel.: +251925310203<br>
+                                      
+                                      <i class="fa fa-envelope fa-lg"></i> Email: <a href="bereketheramo25@gmail.com">bereketheramo25@gmail.com</a>
+                                   </address>
+                                </div>
+                                <div class="col-12 col-sm-4 text-center align-self-center">
+                                <div class="text-center">
+                                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                                        <a class="btn btn-social-icon btn-facebook"  href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                                        <a class="btn btn-social-icon btn-linkedin"  href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                                        <a class="btn btn-social-icon btn-twitter"  href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                                        <a class="btn btn-social-icon btn-youtube"  href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                                        <a class="btn btn-social-icon"  href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                                        </div>
+                                        </div>
+                                        </div>
+                                <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <p>&copy; Copyright 2019 Online School managment System</p>
+                                    </div>
+                                    </div>
+                               </div>
+    </footer>
+</body>
+</html>
